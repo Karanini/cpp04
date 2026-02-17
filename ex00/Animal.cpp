@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:43:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:06:52 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:17:02 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ Animal& Animal::operator=(const Animal& copy)
 		*this = copy;
 	}
 	return (*this);
+}
+
+std::string Animal::getType()
+{
+	return (this->_type);
 }
 
 void Animal::makeSound()
