@@ -6,13 +6,13 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/17 15:05:46 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/02/17 16:48:55 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 
-NAME = metamorph_brain.exe
+NAME = abstract_metamorph.exe
 
 SRC = Animal.cpp \
 		Dog.cpp \
