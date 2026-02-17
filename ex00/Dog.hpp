@@ -34,7 +34,7 @@ public:
 
 	// ---------- Member Methods -----------------------
 
-	virtual void makeSound();
+	virtual void makeSound() const;
 
 protected:
 	// ---------- Protected Data Members ---------------------

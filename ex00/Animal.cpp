@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:43:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:17:02 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:22:41 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ Animal& Animal::operator=(const Animal& copy)
 	return (*this);
 }
 
-std::string Animal::getType()
+std::string const Animal::getType() const
 {
 	return (this->_type);
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "Animal makes a pure animal sound, the sound of the origins, the sound of the first animal..." << std::endl;
 }

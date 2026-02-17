@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:49:15 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:02:37 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:22:41 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	std::string getType();
+	std::string const getType() const;
 
 	// ---------- Member Methods -----------------------
 
-	virtual void makeSound();
+	virtual void makeSound() const;
 
 protected:
 	// ---------- Protected Data Members ---------------------
