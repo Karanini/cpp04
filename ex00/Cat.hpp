@@ -30,8 +30,6 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	std::string getType();
-
 	// ---------- Member Methods -----------------------
 
 	virtual void makeSound() const;
@@ -43,4 +41,4 @@ private:
 	// ---------- Private Data members -------------------------
 };
 
-#endif // DOG_HPP
+#endif // CAT_HPP

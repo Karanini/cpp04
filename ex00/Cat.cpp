@@ -34,7 +34,7 @@ Cat& Cat::operator=(const Cat& copy)
 {
 	std::cout << "Cat assignment operator called" << std::endl;
 	if (this != &copy) {
-		*this = copy;
+		this->Animal::operator=(copy);
 	}
 	return (*this);
 }

@@ -34,7 +34,7 @@ Dog& Dog::operator=(const Dog& copy)
 {
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &copy) {
-		*this = copy;
+		this->Animal::operator=(copy);
 	}
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:43:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:26:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 12:20:07 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Animal& Animal::operator=(const Animal& copy)
 {
 	std::cout << "Animal assignment operator called" << std::endl;
 	if (this != &copy) {
-		*this = copy;
+		this->_type = copy._type;
 	}
 	return (*this);
 }

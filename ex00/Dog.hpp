@@ -30,8 +30,6 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	std::string getType();
-
 	// ---------- Member Methods -----------------------
 
 	virtual void makeSound() const;
