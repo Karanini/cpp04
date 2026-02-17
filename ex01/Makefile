@@ -6,7 +6,7 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/17 14:59:20 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/02/17 15:05:46 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = Animal.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
+		Brain.cpp \
 		main.cpp
 
 HEADERS = Animal.hpp \
@@ -26,6 +27,7 @@ HEADERS = Animal.hpp \
 			Cat.hpp \
 			WrongAnimal.hpp \
 			WrongCat.hpp \
+			Brain.hpp
 
 RM = rm -f
 OBJ := $(patsubst %.cpp, %.o, $(SRC))
