@@ -6,13 +6,15 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 11:15:57 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 12:16:17 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 14:01:47 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -27,6 +29,7 @@ int main(void)
 	delete i;
 	delete j;
 	delete meta;
+	std::cout << '\n';
 
 	Dog dog;
 	Cat cat;
@@ -38,5 +41,12 @@ int main(void)
 	std::cout << "rAnimalCat is a " << rAnimalCat.getType() << " " << std::endl;
 	rAnimalCat.makeSound();
 	rAnimalDog.makeSound();
+	std::cout << '\n';
+
+	WrongCat wrong_cat;
+	WrongAnimal &rWrongAnimalCat = wrong_cat;
+	std::cout << "wrong_cat is a " << wrong_cat.getType() << " " << std::endl;
+	std::cout << "rWrongAnimalCat is a " << rWrongAnimalCat.getType() << " " << std::endl;
+	rWrongAnimalCat.makeSound();
 	return (0);
 }
