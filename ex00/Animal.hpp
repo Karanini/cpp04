@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:49:15 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:26:49 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:56:35 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 
 	Animal(void);
 	Animal(const Animal& copy);
-	~Animal(void);
+	virtual ~Animal(void);
 
 	// ---------- Overloading Operators Methods -------
 

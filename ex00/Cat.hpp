@@ -38,7 +38,6 @@ public:
 
 protected:
 	// ---------- Protected Data Members ---------------------
-	std::string _type;
 
 private:
 	// ---------- Private Data members -------------------------

@@ -13,9 +13,10 @@
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog(void) : _type("Dog")
+Dog::Dog(void) : Animal()
 {
 	std::cout << "Dog default constructor called" << std::endl;
+	this->Animal::_type = "Dog";
 }
 
 Dog::Dog(const Dog& copy)

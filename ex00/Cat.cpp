@@ -13,9 +13,10 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat(void) : _type("Cat")
+Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat default constructor called" << std::endl;
+	this->Animal::_type = "Cat";
 }
 
 Cat::Cat(const Cat& copy)
