@@ -17,6 +17,7 @@ Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->Animal::_type = "Cat";
+	// this->br
 }
 
 Cat::Cat(const Cat& copy)

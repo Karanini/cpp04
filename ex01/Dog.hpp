@@ -40,7 +40,7 @@ protected:
 
 private:
 	// ---------- Private Data members -------------------------
-	Brain *brain;
+	Brain *_brain;
 };
 
 #endif // DOG_HPP
