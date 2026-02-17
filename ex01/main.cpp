@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 11:15:57 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 15:55:44 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:33:48 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-
-/*
-*In your main function, create and fill an array of Animal objects. Half of it will
-be Dog objects and the other half will be Cat objects. At the end of your program
-execution, loop over this array and delete every Animal. You must delete directly dogs
-and cats as Animals. The appropriate destructors must be called in the expected order.
-*/
 int main(void)
 {
 	Animal *animals[10];
