@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:49:15 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:22:41 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:26:49 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ANIMAL_HPP
 
 #include <string>
+#include <iostream>
 
 class Animal {
 public:

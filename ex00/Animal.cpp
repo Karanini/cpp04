@@ -6,12 +6,12 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:43:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:22:41 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:26:45 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include <iostream>
+
 
 Animal::Animal(void) : _type("")
 {

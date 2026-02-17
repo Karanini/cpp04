@@ -6,15 +6,13 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 11:15:57 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 11:22:50 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:27:09 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <string>
-#include <iostream>
 
 int main(void)
 {
