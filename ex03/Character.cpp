@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 16:10:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:09:37 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,20 @@ void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3 || !this->_inventory[idx])
 		return ;
-	//save the unequiped Materia
+	//save the unequiped Materia : array of 1000 AMaterias or list ?
 	this->_inventory[idx] = nullptr;
+}
+
+/*
+The use(int, ICharacter&) member function will have to use the Materia at the
+slot[idx], and pass the target parameter to the AMateria::use function.
+*/
+void Character::use(int idx, ICharacter& target)
+{
+	AMateria *materia;
+
+	if (idx < 0 || idx > 3 || !this->_inventory[idx])
+		return ;
+	materia = this->_inventory[idx];
+	materia->AMateria::use(target);
 }
