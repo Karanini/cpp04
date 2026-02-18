@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:09:37 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:18:05 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,23 @@ Character::~Character(void)
 	std::cout << "Character destructor called" << std::endl;
 }
 
+/*
+Any copy
+(using copy constructor or copy assignment operator) of a Character must be deep.
+During copy, the Materias of a Character must be deleted before the new ones are added
+to their inventory.
+*/
 Character& Character::operator=(const Character& copy)
 {
 	std::cout << "Character assignment operator called" << std::endl;
-	if (this != &copy) {
-		// copy data members here
+	if (this != &copy)
+	{
+		this->_name = copy.getName();
+		for (int i = 0; i < 4; i++)
+		{
+			delete this->_inventory[i];
+			this->_inventory[i] = copy._inventory[i]->clone();
+		}
 	}
 	return (*this);
 }
