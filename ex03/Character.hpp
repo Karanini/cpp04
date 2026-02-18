@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:03 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 15:52:24 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 16:00:17 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ public:
 	// ---------- Constructors / Destructor ----------
 
 	Character(void);
+	Character(std::string const &name);
 	Character(const Character& copy);
 	~Character(void);
 
@@ -30,7 +31,13 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
+	virtual std::string const & getName() const override;
+
 	// ---------- Member Methods -----------------------
+
+	virtual void equip(AMateria* m) override;
+	virtual void unequip(int idx) override;
+	virtual void use(int idx, ICharacter& target) override;
 
 protected:
 	// ---------- Protected Data Members ---------------------
@@ -38,6 +45,7 @@ protected:
 private:
 	// ---------- Private Data members -------------------------
 	AMateria *_inventory[4];
+	std::string _name;
 };
 
 #endif // CHARACTER_HPP
