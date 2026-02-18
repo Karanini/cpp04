@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:29:12 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 14:50:48 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:56:24 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,10 @@ AMateria& AMateria::operator=(const AMateria& copy)
 std::string const &AMateria::getType() const
 {
 	return (this->_type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "AMateria use() function called. Nothing happens, try to use it with an inherited class object." << std::endl;
 }
 
