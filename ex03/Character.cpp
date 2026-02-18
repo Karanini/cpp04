@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:18:05 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:34:09 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,25 @@ void Character::equip(AMateria* m)
 	while(this->_inventory[slot])
 		slot++;
 	if (slot == 4)
+	{
+		std::cout << "Your inventory is full!" << std::endl;
 		return ;
+	}
 	else
+	{
+		std::cout << m->getType() << " added to slot number " << slot << std::endl;
 		this->_inventory[slot] = m;
+	}
 }
 
 void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3 || !this->_inventory[idx])
+	{
+		std::cout << "Error: wrong slot number or empty slot." << std::endl;
 		return ;
+	}
+	std::cout << this->_inventory[idx]->getType() << " unequipped from slot number " << idx << std::endl;
 	//save the unequiped Materia : array of 1000 AMaterias or list ?
 	this->_inventory[idx] = nullptr;
 }
