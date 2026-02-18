@@ -32,8 +32,8 @@ public:
 
 	// ---------- Member Methods -----------------------
 
-	virtual Cure* clone() const override;
-	virtual void use(ICharacter& target) override;
+	virtual Cure* clone() const  ;
+	virtual void use(ICharacter& target)  ;
 
 protected:
 	// ---------- Protected Data Members ---------------------

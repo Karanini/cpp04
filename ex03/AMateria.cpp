@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:29:12 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 14:56:24 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:45:31 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ std::string const &AMateria::getType() const
 void AMateria::use(ICharacter& target)
 {
 	std::cout << "AMateria use() function called. Nothing happens, try to use it with an inherited class object." << std::endl;
+	(void)target;
 }
 

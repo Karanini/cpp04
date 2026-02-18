@@ -6,13 +6,22 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:30:38 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:42:19 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include <iostream>
+
+void use_all_Materias(Character someGuy)
+{
+	std::cout << '\n';
+	for (int i = 0; i < 4; i++)
+		someGuy.use(i, someGuy);
+	std::cout << '\n';
+}
 
 int main(void)
 {
@@ -30,4 +39,18 @@ int main(void)
 	hero.equip(curePtr2);
 	hero.equip(icePtr3);
 	hero.equip(curePtr3);
+
+	use_all_Materias(hero);
+
+	hero.unequip(0);
+	hero.unequip(1);
+	hero.equip(icePtr3);
+	hero.equip(curePtr3);
+
+	use_all_Materias(hero);
+
+	hero.unequip(3);
+	hero.equip(icePtr1);
+
+	use_all_Materias(hero);
 }

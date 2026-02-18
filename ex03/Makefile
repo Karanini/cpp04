@@ -6,7 +6,7 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/18 14:52:33 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/02/18 17:44:02 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,16 @@
 NAME = materia.exe
 
 SRC = AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
 		main.cpp
 
 HEADERS = AMateria.hpp \
+			Character.hpp \
+			Cure.hpp \
+			Ice.hpp \
+			ICharacter.hpp \
 
 RM = rm -f
 OBJ := $(patsubst %.cpp, %.o, $(SRC))

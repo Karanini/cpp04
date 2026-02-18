@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:34:09 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:40:52 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,10 @@ void Character::use(int idx, ICharacter& target)
 	AMateria *materia;
 
 	if (idx < 0 || idx > 3 || !this->_inventory[idx])
+	{
+		std::cout << "Error: wrong slot number or empty slot." << std::endl;
 		return ;
+	}
 	materia = this->_inventory[idx];
 	materia->AMateria::use(target);
 }

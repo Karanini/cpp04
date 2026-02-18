@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:03 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 16:00:17 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:59:11 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	virtual std::string const & getName() const override;
+	virtual std::string const & getName() const  ;
 
 	// ---------- Member Methods -----------------------
 
-	virtual void equip(AMateria* m) override;
-	virtual void unequip(int idx) override;
-	virtual void use(int idx, ICharacter& target) override;
+	virtual void equip(AMateria* m)  ;
+	virtual void unequip(int idx)  ;
+	virtual void use(int idx, ICharacter& target)  ;
 
 protected:
 	// ---------- Protected Data Members ---------------------

@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:57:36 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 15:04:35 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 17:59:11 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ public:
 
 	// ---------- Member Methods -----------------------
 
-	virtual Ice* clone() const override;
-	virtual void use(ICharacter& target) override;
+	virtual Ice* clone() const  ;
+	virtual void use(ICharacter& target)  ;
 
 protected:
 	// ---------- Protected Data Members ---------------------

@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:28:20 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 14:54:21 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 18:01:07 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define AMATERIA_HPP
 
 #include <string>
-#include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria {
 public:
@@ -31,7 +31,7 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	std::string const & getType() const;
+	std::string const &getType() const;
 
 	// ---------- Member Methods -----------------------
 
