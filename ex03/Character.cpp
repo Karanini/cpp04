@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 16:07:58 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 16:10:45 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,12 @@ void Character::equip(AMateria* m)
 		return ;
 	else
 		this->_inventory[slot] = m;
+}
+
+void Character::unequip(int idx)
+{
+	if (idx < 0 || idx > 3 || !this->_inventory[idx])
+		return ;
+	//save the unequiped Materia
+	this->_inventory[idx] = nullptr;
 }
