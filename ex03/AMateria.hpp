@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:28:20 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 14:50:59 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:54:21 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AMATERIA_HPP
 
 #include <string>
+#include "ICharacter.hpp"
 
 class AMateria {
 public:
@@ -35,7 +36,7 @@ public:
 	// ---------- Member Methods -----------------------
 
 	virtual AMateria* clone() const = 0;
-	// virtual void use(ICharacter& target);
+	virtual void use(ICharacter& target);
 
 protected:
 	// ---------- Protected Data Members ---------------------
