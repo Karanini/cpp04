@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:29:12 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:45:31 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:48:41 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 AMateria::AMateria(void) : _type("default")
 {
 	std::cout << "AMateria default constructor called" << std::endl;
-}
-
-AMateria::AMateria(std::string const &type) : _type(type)
-{
-	std::cout << "AMateria subject constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria& copy)

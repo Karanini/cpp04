@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:58:47 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 15:10:46 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:48:13 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include <iostream>
 
-Ice::Ice(void) : AMateria("ice")
+Ice::Ice(void) : AMateria()
 {
 	std::cout << "Ice default constructor called" << std::endl;
+	this->AMateria::_type = "ice";
 }
 
 Ice::Ice(const Ice& copy)

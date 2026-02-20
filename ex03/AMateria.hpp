@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:28:20 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 18:01:07 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:48:28 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ public:
 	// ---------- Constructors / Destructor ----------
 
 	AMateria(void);
-	AMateria(std::string const & type);
 	AMateria(const AMateria& copy);
-	~AMateria(void);
+	virtual ~AMateria(void);
 
 	// ---------- Overloading Operators Methods -------
 

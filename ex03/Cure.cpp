@@ -11,11 +11,13 @@
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
-Cure::Cure(void) : AMateria("ice")
+Cure::Cure(void) : AMateria()
 {
 	std::cout << "Cure default constructor called" << std::endl;
+	this->AMateria::_type = "cure";
 }
 
 Cure::Cure(const Cure& copy)

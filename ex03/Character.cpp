@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:40:52 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/20 16:29:24 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
 #include <iostream>
 
 Character::Character(void) : _name("default")
 {
 	std::cout << "Character default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = nullptr;
+		this->_inventory[i] = NULL;
 }
 
 Character::Character(std::string const &name) : _name(name)
 {
 	std::cout << "Character subject constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = nullptr;
+		this->_inventory[i] = NULL;
 }
 
 
@@ -99,7 +100,7 @@ void Character::unequip(int idx)
 	}
 	std::cout << this->_inventory[idx]->getType() << " unequipped from slot number " << idx << std::endl;
 	//save the unequiped Materia : array of 1000 AMaterias or list ?
-	this->_inventory[idx] = nullptr;
+	this->_inventory[idx] = NULL;
 }
 
 /*
