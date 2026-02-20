@@ -20,7 +20,7 @@ Cure::Cure(void) : AMateria()
 	this->AMateria::_type = "cure";
 }
 
-Cure::Cure(const Cure& copy)
+Cure::Cure(const Cure& copy) : AMateria()
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 	*this = copy;
