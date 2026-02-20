@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/18 17:42:19 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/20 17:02:56 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
 	Ice *icePtr2 = new Ice();
 	Cure *curePtr2 = new Cure();
 	Ice *icePtr3 = icePtr2->clone();
-	Cure *curePtr3 = curePtr3->clone();
+	Cure *curePtr3 = curePtr2->clone();
 
 	Character hero = Character("hero");
 	hero.equip(icePtr1);

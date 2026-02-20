@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "Character.hpp"
 #include "ICharacter.hpp"
 #include <iostream>
 
