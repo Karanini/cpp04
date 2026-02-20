@@ -6,11 +6,12 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:58:47 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/20 16:48:13 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/20 16:51:13 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
 Ice::Ice(void) : AMateria()
