@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:03 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/20 16:23:32 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 16:52:00 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
-	virtual std::string const & getName() const  ;
+	virtual std::string const &getName() const  ;
 
 	// ---------- Member Methods -----------------------
 
