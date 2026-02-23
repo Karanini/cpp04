@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/20 17:02:56 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 17:12:42 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Character.hpp"
 #include <iostream>
 
-void use_all_Materias(Character someGuy)
+void use_all_Materias(Character &someGuy)
 {
 	std::cout << '\n';
 	for (int i = 0; i < 4; i++)
@@ -29,8 +29,10 @@ int main(void)
 	Cure *curePtr1 = new Cure();
 	Ice *icePtr2 = new Ice();
 	Cure *curePtr2 = new Cure();
+	std::cout << '\n';
 	Ice *icePtr3 = icePtr2->clone();
 	Cure *curePtr3 = curePtr2->clone();
+	std::cout << '\n';
 
 	Character hero = Character("hero");
 	hero.equip(icePtr1);

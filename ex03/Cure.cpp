@@ -32,10 +32,15 @@ Cure::~Cure(void)
 	std::cout << "Cure destructor called" << std::endl;
 }
 
+/*
+Subject: "While assigning a Materia to another, copying the type doesn’t make
+sense." --> is this implementation ok ?
+*/
 Cure& Cure::operator=(const Cure& copy)
 {
 	std::cout << "Cure assignment operator called" << std::endl;
 	(void)copy;
+	this->_type = "cure";
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:58:47 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/23 16:54:47 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 17:11:11 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Ice& Ice::operator=(const Ice& copy)
 {
 	std::cout << "Ice assignment operator called" << std::endl;
 	(void)copy;
+	this->_type = "ice";
 	return (*this);
 }
 
