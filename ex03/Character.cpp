@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/20 16:29:24 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 17:22:44 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void Character::equip(AMateria* m)
 {
 	int	slot = 0;
 
-	while(this->_inventory[slot])
+	while(this->_inventory[slot] && slot < 4)
 		slot++;
 	if (slot == 4)
 	{
@@ -117,5 +117,5 @@ void Character::use(int idx, ICharacter& target)
 		return ;
 	}
 	materia = this->_inventory[idx];
-	materia->AMateria::use(target);
+	materia->use(target);
 }
