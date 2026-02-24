@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/23 17:22:44 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/24 11:37:33 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,25 @@ Character::Character(std::string const &name) : _name(name)
 		this->_inventory[i] = NULL;
 }
 
-
+/*
+Need to init the inventory slots to NULL, so that the assignment operator
+overload won't crash when calling `delete` on the slots. In c++11 it would have been
+possible to call the default constructor (delegating constructor). But this option
+is not possible in c++98 required by the subject.
+*/
 Character::Character(const Character& copy)
 {
 	std::cout << "Character copy constructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+        this->_inventory[i] = NULL;
 	*this = copy;
 }
 
 Character::~Character(void)
 {
 	std::cout << "Character destructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+        delete this->_inventory[i];
 }
 
 /*
@@ -55,7 +64,10 @@ Character& Character::operator=(const Character& copy)
 		for (int i = 0; i < 4; i++)
 		{
 			delete this->_inventory[i];
-			this->_inventory[i] = copy._inventory[i]->clone();
+			if (copy._inventory[i])
+				this->_inventory[i] = copy._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
 		}
 	}
 	return (*this);
