@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:03 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/23 16:52:00 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/24 11:57:04 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ private:
 	// ---------- Private Data members -------------------------
 	AMateria *_inventory[4];
 	std::string _name;
+	int check_inventory(int idx);
 };
 
 #endif // CHARACTER_HPP

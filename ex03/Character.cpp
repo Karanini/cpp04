@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/24 11:37:33 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:59:06 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,25 @@ void Character::equip(AMateria* m)
 	}
 }
 
+int Character::check_inventory(int idx)
+{
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Error: wrong slot number." << std::endl;
+		return (1);
+	}
+	if (!this->_inventory[idx])
+	{
+		std::cout << "Empty slot!" << std::endl;
+		return (1);
+	}
+	return (0);
+}
+
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3 || !this->_inventory[idx])
-	{
-		std::cout << "Error: wrong slot number or empty slot." << std::endl;
+	if (this->check_inventory(idx))
 		return ;
-	}
 	std::cout << this->_inventory[idx]->getType() << " unequipped from slot number " << idx << std::endl;
 	//save the unequiped Materia : array of 1000 AMaterias or list ?
 	this->_inventory[idx] = NULL;
@@ -123,11 +135,8 @@ void Character::use(int idx, ICharacter& target)
 {
 	AMateria *materia;
 
-	if (idx < 0 || idx > 3 || !this->_inventory[idx])
-	{
-		std::cout << "Error: wrong slot number or empty slot." << std::endl;
+	if (this->check_inventory(idx))
 		return ;
-	}
 	materia = this->_inventory[idx];
 	materia->use(target);
 }
