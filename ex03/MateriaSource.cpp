@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:06:48 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/26 18:43:35 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/26 18:51:47 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,22 @@ void MateriaSource::learnMateria(AMateria* tolearn)
 	}
 	else
 		this->_MateriaSourceTab[slot] = tolearn;
+}
+/*
+Returns a new Materia. The latter is a copy of the Materia previously learned by
+the MateriaSource whose type equals the one passed as parameter. Returns 0 if
+the type is unknown.
+*/
+AMateria* MateriaSource::createMateria(std::string const &type)
+{
+	int slot = 0;
+
+	while (slot < 4 && !this->_MateriaSourceTab[slot] || this->_MateriaSourceTab[slot]->getType() != type)
+		slot++;
+	if (slot == 4)
+	{
+		std::cout << "Type unknown." << std::endl;
+		return (0);
+	}
+
 }
