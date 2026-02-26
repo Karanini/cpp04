@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/24 11:59:06 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:49:42 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ Character& Character::operator=(const Character& copy)
 			delete this->_inventory[i];
 			if (copy._inventory[i])
 				this->_inventory[i] = copy._inventory[i]->clone();
-			else
-				this->_inventory[i] = NULL;
 		}
 	}
 	return (*this);

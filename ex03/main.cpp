@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/24 11:58:19 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:55:20 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,26 @@ int main(void)
 	hero.unequip(3);
 	Character *empty_soul = new Character(hero);
 	use_all_Materias(*empty_soul);
+
+	std::cout << "\\---------------Assignment operator tests------------/" << std::endl;
+	std::cout << "\\--------------------Origin inventory half full------------/" << std::endl;
+	empty_soul = half_life;
+	use_all_Materias(*empty_soul);
+
+	delete empty_soul;
+	// delete half_life;
+	std::cout << '\n';
+	delete copy;
+	std::cout << '\n';
+	delete icePtr1;
+	std::cout << '\n';
+	delete icePtr2;
+	std::cout << '\n';
+	delete icePtr3;
+	std::cout << '\n';
+	delete curePtr1;
+	std::cout << '\n';
+	delete curePtr2;
+	std::cout << '\n';
+	delete curePtr3;
 }
