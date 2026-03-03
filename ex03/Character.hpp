@@ -45,6 +45,7 @@ protected:
 private:
 	// ---------- Private Data members -------------------------
 	AMateria *_inventory[4];
+	AMateria **_floor;
 	std::string _name;
 	int check_inventory(int idx);
 };
