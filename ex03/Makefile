@@ -18,18 +18,21 @@ SRC = AMateria.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		main.cpp
+		main.cpp \
+		MateriaSource.cpp
 
 HEADERS = AMateria.hpp \
 			Character.hpp \
 			Cure.hpp \
 			Ice.hpp \
 			ICharacter.hpp \
+			IMateriaSource.hpp \
+			MateriaSource.hpp
 
 RM = rm -f
 OBJ := $(patsubst %.cpp, %.o, $(SRC))
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -ggdb
 
 all: $(NAME)
 

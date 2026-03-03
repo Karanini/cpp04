@@ -77,12 +77,13 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	int slot = 0;
 
-	while (slot < 4 && !this->_MateriaSourceTab[slot] || this->_MateriaSourceTab[slot]->getType() != type)
-		slot++;
+	while (slot < 4 && (!this->_MateriaSourceTab[slot] || this->_MateriaSourceTab[slot]->getType() != type))
+    	slot++;
 	if (slot == 4)
 	{
 		std::cout << "Type unknown." << std::endl;
 		return (0);
 	}
-
+	else
+		return (this->_MateriaSourceTab[slot]->clone());
 }

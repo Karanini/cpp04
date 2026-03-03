@@ -13,6 +13,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 #include <iostream>
 
 void use_all_Materias(Character &someGuy)
@@ -82,6 +83,7 @@ int main(void)
 
 	std::cout << "\\---------------Assignment operator tests------------/" << std::endl;
 	std::cout << "\\--------------------Origin inventory half full------------/" << std::endl;
+	delete empty_soul;
 	empty_soul = half_life;
 	use_all_Materias(*empty_soul);
 
@@ -89,6 +91,41 @@ int main(void)
 	// delete half_life;
 	std::cout << '\n';
 	delete copy;
+	std::cout << '\n';
+	std::cout << "\\---------------MateriaSource learnMateria() and createMateria() tests------------/" << std::endl;
+	MateriaSource *src = new MateriaSource();
+	std::cout << '\n';
+
+	std::cout << "Learning Materias..." << std::endl;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	// src->learnMateria(new Cure());
+	src->learnMateria(curePtr1);
+	std::cout << '\n';
+
+	std::cout << "Creating Materias from source..." << std::endl;
+	AMateria *m1 = src->createMateria("ice");
+	AMateria *m2 = src->createMateria("cure");
+	AMateria *m3 = src->createMateria("ice");
+	AMateria *m4 = src->createMateria("cure");
+	std::cout << '\n';
+
+	std::cout << "Trying to create unknown type..." << std::endl;
+	AMateria *m5 = src->createMateria("fireball");
+	(void)m5;
+	std::cout << '\n';
+
+	std::cout << "Learning when full..." << std::endl;
+	src->learnMateria(new Ice());
+	std::cout << '\n';
+
+	delete m1;
+	delete m2;
+	delete m3;
+	(void)m4;
+	// delete m4;
+	delete src;
 	std::cout << '\n';
 	delete icePtr1;
 	std::cout << '\n';
