@@ -63,6 +63,7 @@ void MateriaSource::learnMateria(AMateria* tolearn)
 	if (slot == 4)
 	{
 		std::cout << "MateriaSource tab is full!" << std::endl;
+		delete tolearn;
 		return ;
 	}
 	else

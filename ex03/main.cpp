@@ -100,8 +100,7 @@ int main(void)
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
-	src->learnMateria(curePtr1);
+	src->learnMateria(new Cure());
 	std::cout << '\n';
 
 	std::cout << "Creating Materias from source..." << std::endl;
@@ -123,8 +122,7 @@ int main(void)
 	delete m1;
 	delete m2;
 	delete m3;
-	(void)m4;
-	// delete m4;
+	delete m4;
 	delete src;
 	std::cout << '\n';
 	delete icePtr1;
