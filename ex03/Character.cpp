@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/04 11:16:59 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:25:40 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,16 @@ void Character::unequip(int idx)
 	if (this->check_inventory(idx))
 		return ;
 	std::cout << this->_inventory[idx]->getType() << " unequipped from slot number " << idx << std::endl;
-	//save the unequiped Materia : array of 1000 AMaterias or list ?
+	this->_floorSize++;
+	AMateria **NewFloor = new AMateria*[this->_floorSize];
+	for (int i = 0; i < this->_floorSize - 1; i++)
+	{
+		NewFloor[i] = this->_floor[i];
+		delete this->_floor[i];
+	}
+	delete this->_floor;
+	NewFloor[this->_floorSize - 1] = this->_inventory[idx];
+	this->_floor = NewFloor;
 	this->_inventory[idx] = NULL;
 }
 
