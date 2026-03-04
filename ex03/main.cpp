@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/26 17:55:20 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:57:52 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ int main(void)
 
 	use_all_Materias(hero);
 
+	std::cout << "Creating copy with hero inventory full, nothing unequipped\n";
+	Character *copy0 = new Character(hero);
+	use_all_Materias(*copy0);
+
 	hero.unequip(0);
 	hero.unequip(1);
 	hero.unequip(1);
@@ -63,7 +67,7 @@ int main(void)
 	use_all_Materias(hero);
 
 	std::cout << "\\---------------Character copy constructor + assignment operator tests------------/" << std::endl;
-	std::cout << "\\--------------------Full inventory------------/" << std::endl;
+	std::cout << "\\--------------------Full inventory + 3 items on the floor------------/" << std::endl;
 	Character *copy = new Character(hero);
 	use_all_Materias(*copy);
 
@@ -136,4 +140,41 @@ int main(void)
 	delete curePtr2;
 	std::cout << '\n';
 	delete curePtr3;
+	std::cout << '\n';
+
+	std::cout << "\n---------- ADDITIONAL FLOOR & ASSIGNMENT TESTS ----------\n" << std::endl;
+	{
+		Character *bob = new Character("Bob");
+		bob->equip(new Ice());
+		bob->equip(new Cure());
+		bob->unequip(0); // Ice on floor
+		bob->unequip(1); // Cure on floor
+
+		std::cout << "Assigning Bob to Jim" << std::endl;
+		Character jim("Jim");
+		jim = *bob; // Deep copy should clone floor as well
+
+		std::cout << "Deleting Bob, Jim should still have cloned floor/items" << std::endl;
+		delete bob;
+
+		// Testing deep copy with unequip
+		jim.equip(new Ice());
+		jim.unequip(0); // Should be added to Jim's floor
+	}
+
+	std::cout << "\n---------- TEST DEEP COPY AND INDEPENDENCE ----------\n" << std::endl;
+	{
+		Character a("A");
+		a.equip(new Ice());
+		Character b(a);
+		a.unequip(0); // A's inventory is now empty, Ice is on floor
+		b.equip(new Cure()); // B's inventory has 1 Ice, 1 Cure
+
+		std::cout << "A's name: " << a.getName() << std::endl;
+		std::cout << "B's name: " << b.getName() << std::endl;
+
+		std::cout << "A use(0, b): "; a.use(0, b); // Should do nothing (empty after unequip)
+		std::cout << "B use(0, a): "; b.use(0, a); // Should use Ice
+		std::cout << "B use(1, a): "; b.use(1, a); // Should use Cure
+	}
 }
