@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/04 11:25:40 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:30:52 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ Character::~Character(void)
 	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
         delete this->_inventory[i];
+	for (int i = 0; i < this->_floorSize; i++)
+		delete this->_floor[i];
+	delete this->_floor;
 }
 
 /*
