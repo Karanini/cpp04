@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/26 17:49:42 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:16:59 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ Character::Character(void) : _name("default")
 	std::cout << "Character default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_floor = new AMateria*[1]; //allocating an array of pointers to AMateria
+	this->_floor[0] = NULL;
+	this->_floorSize = 1;
 }
 
 Character::Character(std::string const &name) : _name(name)
@@ -26,6 +29,9 @@ Character::Character(std::string const &name) : _name(name)
 	std::cout << "Character subject constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_floor = new AMateria*[1]; //allocating an array of pointers to AMateria
+	this->_floor[0] = NULL;
+	this->_floorSize = 1;
 }
 
 /*
@@ -39,6 +45,9 @@ Character::Character(const Character& copy)
 	std::cout << "Character copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
         this->_inventory[i] = NULL;
+	this->_floor = new AMateria*[1]; //allocating an array of pointers to AMateria
+	this->_floor[0] = NULL;
+	this->_floorSize = 1;
 	*this = copy;
 }
 
@@ -50,10 +59,12 @@ Character::~Character(void)
 }
 
 /*
-Any copy
+Subject: "Any copy
 (using copy constructor or copy assignment operator) of a Character must be deep.
 During copy, the Materias of a Character must be deleted before the new ones are added
-to their inventory.
+to their inventory."
+Deep copy of the inventory and also the floor: deleting the old floor before making
+room for the copied one.
 */
 Character& Character::operator=(const Character& copy)
 {
@@ -66,6 +77,17 @@ Character& Character::operator=(const Character& copy)
 			delete this->_inventory[i];
 			if (copy._inventory[i])
 				this->_inventory[i] = copy._inventory[i]->clone();
+		}
+		for (int i = 0; i < this->_floorSize; i++)
+		{
+			delete this->_floor[i];
+		}
+		delete this->_floor;
+		this->_floorSize = copy._floorSize;
+		this->_floor = new AMateria*[this->_floorSize];
+		for (int i = 0; i < this->_floorSize; i++)
+		{
+			this->_floor[i] = copy._floor[i]->clone();
 		}
 	}
 	return (*this);
