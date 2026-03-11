@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/11 14:26:37 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:43:28 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,9 +152,7 @@ void Character::unequip(int idx)
 	this->_floorSize++;
 	AMateria **NewFloor = new AMateria*[this->_floorSize];
 	for (int i = 0; i < this->_floorSize - 1; i++)
-	{
 		NewFloor[i] = this->_floor[i];
-	}
 	delete[] this->_floor;
 	NewFloor[this->_floorSize - 1] = this->_inventory[idx];
 	this->_floor = NewFloor;
