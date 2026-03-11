@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/11 16:43:28 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:14:03 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,8 @@ If they try to add a Materia to
 a full inventory, or use/unequip a non-existent Materia, nothing should happen (but bugs
 are still forbidden).
 */
-void Character::equip(AMateria* m)
+void Character::equip(AMateria* m) //need to check if the materia is already in the inventory
+// to prevent double delete problems
 {
 	int	slot = 0;
 
