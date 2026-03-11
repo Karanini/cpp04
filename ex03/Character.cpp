@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/04 11:51:02 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 14:26:37 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Character::~Character(void)
         delete this->_inventory[i];
 	for (int i = 0; i < this->_floorSize; i++)
 		delete this->_floor[i];
-	delete this->_floor;
+	delete[] this->_floor;
 }
 
 /*
@@ -85,12 +85,15 @@ Character& Character::operator=(const Character& copy)
 		{
 			delete this->_floor[i];
 		}
-		delete this->_floor;
+		delete[] this->_floor;
 		this->_floorSize = copy._floorSize;
 		this->_floor = new AMateria*[this->_floorSize];
 		for (int i = 0; i < this->_floorSize; i++)
 		{
-			this->_floor[i] = copy._floor[i]->clone();
+			if (copy._floor[i])
+				this->_floor[i] = copy._floor[i]->clone();
+			else
+				this->_floor[i] = NULL;
 		}
 	}
 	return (*this);
@@ -150,13 +153,9 @@ void Character::unequip(int idx)
 	AMateria **NewFloor = new AMateria*[this->_floorSize];
 	for (int i = 0; i < this->_floorSize - 1; i++)
 	{
-		if (this->_floor[i])
-			NewFloor[i] = this->_floor[i]->clone();
-		else
-			NewFloor[i] = NULL;
-		delete this->_floor[i];
+		NewFloor[i] = this->_floor[i];
 	}
-	delete this->_floor;
+	delete[] this->_floor;
 	NewFloor[this->_floorSize - 1] = this->_inventory[idx];
 	this->_floor = NewFloor;
 	this->_inventory[idx] = NULL;
