@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/12 14:34:05 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/12 14:37:03 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,20 +131,20 @@ int main(void)
 	delete m2;
 	delete m3;
 	delete m4;
-	// delete src;
-	// std::cout << '\n';
-	// delete icePtr1;
-	// std::cout << '\n';
-	// delete icePtr2;
-	// std::cout << '\n';
-	// delete icePtr3;
-	// std::cout << '\n';
-	// delete curePtr1;
-	// std::cout << '\n';
-	// delete curePtr2;
-	// std::cout << '\n';
-	// delete curePtr3;
-	// std::cout << '\n';
+	delete src;
+	std::cout << '\n';
+	delete icePtr1;
+	std::cout << '\n';
+	delete icePtr2;
+	std::cout << '\n';
+	delete icePtr3;
+	std::cout << '\n';
+	delete curePtr1;
+	std::cout << '\n';
+	delete curePtr2;
+	std::cout << '\n';
+	delete curePtr3;
+	std::cout << '\n';
 
 	std::cout << "\n---------- ADDITIONAL FLOOR & ASSIGNMENT TESTS ----------\n" << std::endl;
 	{
