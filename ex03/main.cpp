@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:25:01 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/11 17:12:51 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:34:05 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int main(void)
 
 	use_all_Materias(hero);
 
+	hero.unequip(0);
+	hero.equip(icePtr1);
+
 	std::cout << "Creating copy with hero inventory full, nothing unequipped\n";
 	Character *copy0 = new Character(hero);
 	use_all_Materias(*copy0);
@@ -61,7 +64,8 @@ int main(void)
 
 	use_all_Materias(hero);
 
-	hero.unequip(3);
+	hero.unequip(2);
+	hero.equip(icePtr1);
 	hero.equip(icePtr1);
 
 	use_all_Materias(hero);
@@ -177,4 +181,5 @@ int main(void)
 		std::cout << "B use(0, a): "; b.use(0, a); // Should use Ice
 		std::cout << "B use(1, a): "; b.use(1, a); // Should use Cure
 	}
+	std::cout << "\n end of the line \n" << std::endl;
 }

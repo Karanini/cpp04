@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/11 17:14:03 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:41:26 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,18 @@ are still forbidden).
 void Character::equip(AMateria* m) //need to check if the materia is already in the inventory
 // to prevent double delete problems
 {
-	int	slot = 0;
+	if (!m)
+        return;
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_inventory[i] == m)
+        {
+            std::cout << "Materia already equipped!" << std::endl;
+            return;
+        }
+    }
 
+	int slot = 0;
 	while(this->_inventory[slot] && slot < 4)
 		slot++;
 	if (slot == 4)
