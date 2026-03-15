@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/12 14:37:47 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/15 14:38:18 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ Character::Character(const Character& copy)
 Character::~Character(void)
 {
 	std::cout << "Character destructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
-        delete this->_inventory[i];
-	for (int i = 0; i < this->_floorSize; i++)
-		delete this->_floor[i];
+	// for (int i = 0; i < 4; i++)
+    //     delete this->_inventory[i];
+	// for (int i = 0; i < this->_floorSize; i++)
+	// 	delete this->_floor[i];
 	delete[] this->_floor;
 }
 
@@ -75,17 +75,23 @@ Character& Character::operator=(const Character& copy)
 	if (this != &copy)
 	{
 		this->_name = copy.getName();
+
+		//copy inventory
 		for (int i = 0; i < 4; i++)
 		{
 			delete this->_inventory[i];
 			if (copy._inventory[i])
 				this->_inventory[i] = copy._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
 		}
+
+		//delete old floor
 		for (int i = 0; i < this->_floorSize; i++)
-		{
 			delete this->_floor[i];
-		}
 		delete[] this->_floor;
+
+		//create new floor and transfer copy's floor into it
 		this->_floorSize = copy._floorSize;
 		this->_floor = new AMateria*[this->_floorSize];
 		for (int i = 0; i < this->_floorSize; i++)
