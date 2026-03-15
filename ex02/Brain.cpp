@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 15:06:32 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 15:09:27 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:55:54 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ Brain& Brain::operator=(const Brain& copy)
 			this->_ideas[i] = copy._ideas[i];
 	}
 	return (*this);
+}
+
+std::string Brain::getIdea(int index) const
+{
+	if (index < 0 || index >= 100)
+		return ("");
+	return (this->_ideas[index]);
+}
+
+void Brain::setIdea(int index, std::string idea)
+{
+	if (index < 0 || index >= 100)
+		return ;
+	this->_ideas[index] = idea;
 }
