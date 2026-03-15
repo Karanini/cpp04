@@ -22,7 +22,7 @@ public:
 
 	WrongAnimal(void);
 	WrongAnimal(const WrongAnimal& copy);
-	virtual ~WrongAnimal(void);
+	~WrongAnimal(void);
 
 	// ---------- Overloading Operators Methods -------
 
