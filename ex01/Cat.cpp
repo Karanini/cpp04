@@ -20,10 +20,15 @@ Cat::Cat(void) : Animal()
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat& copy)
+/*
+* we are not using `*this = copy` here because `this->brain` contains garbage
+values after init, so it would have caused segfaults in `operator=()`.
+So we init the object directly here.
+*/
+Cat::Cat(const Cat& copy) : Animal(copy)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = copy;
+	this->_brain = new Brain(*copy._brain);
 }
 
 Cat::~Cat(void)
@@ -42,6 +47,16 @@ Cat& Cat::operator=(const Cat& copy)
 		this->_brain = new Brain(*copy._brain);
 	}
 	return (*this);
+}
+
+std::string Cat::getIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}
+
+void Cat::setIdea(int index, std::string idea)
+{
+	this->_brain->setIdea(index, idea);
 }
 
 void Cat::makeSound() const

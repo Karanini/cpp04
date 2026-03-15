@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 14:54:15 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/17 15:07:43 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:55:52 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ public:
 	Brain& operator=(const Brain& copy);
 
 	// ---------- Getter and Setter Methods ------------
+
+	std::string getIdea(int index) const;
+	void setIdea(int index, std::string idea);
 
 	// ---------- Member Methods -----------------------
 

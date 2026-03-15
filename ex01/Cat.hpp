@@ -31,6 +31,9 @@ public:
 
 	// ---------- Getter and Setter Methods ------------
 
+	std::string getIdea(int index) const;
+	void setIdea(int index, std::string idea);
+
 	// ---------- Member Methods -----------------------
 
 	virtual void makeSound() const;
