@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:45:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/15 14:38:18 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/15 15:57:25 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,21 @@ Character::Character(const Character& copy)
 	*this = copy;
 }
 
+/*
+The destructor handles the deletes of the inventory and floor Materias. This implies that
+the Materias can be equipped only once and by a unique Character. Once unequipped, they stay
+on the floor until the end of the program.
+This technical choice is necessary to avoid situations too complex to handle that would very
+probably leed to double deletes problems: Materias equipped by several Characters, Materia
+in the inventory and the floor at the same time (if we unequip then equip again), etc.
+*/
 Character::~Character(void)
 {
 	std::cout << "Character destructor called" << std::endl;
-	// for (int i = 0; i < 4; i++)
-    //     delete this->_inventory[i];
-	// for (int i = 0; i < this->_floorSize; i++)
-	// 	delete this->_floor[i];
+	for (int i = 0; i < 4; i++)
+        delete this->_inventory[i];
+	for (int i = 0; i < this->_floorSize; i++)
+		delete this->_floor[i];
 	delete[] this->_floor;
 }
 
@@ -111,14 +119,16 @@ std::string const &Character::getName() const
 }
 
 /*
-They equip the Materias in the first empty
+Subject: They equip the Materias in the first empty
 slot they find, in the following order: from slot 0 to slot 3.
 If they try to add a Materia to
 a full inventory, or use/unequip a non-existent Materia, nothing should happen (but bugs
 are still forbidden).
+
+Appart from the full inventory check, this function also checks if the materia is already
+equipped, to avoid double deletes.
 */
-void Character::equip(AMateria* m) //need to check if the materia is already in the inventory
-// to prevent double delete problems
+void Character::equip(AMateria* m)
 {
 	if (!m)
         return;
