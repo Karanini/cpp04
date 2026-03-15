@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:06:48 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/26 18:51:47 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/15 17:42:24 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void MateriaSource::learnMateria(AMateria* tolearn)
 		return ;
 	}
 	else
-		this->_MateriaSourceTab[slot] = tolearn;
+		this->_MateriaSourceTab[slot] = tolearn->clone();
 }
 /*
 Returns a new Materia. The latter is a copy of the Materia previously learned by
